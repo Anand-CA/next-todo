@@ -28,8 +28,8 @@ export default function Home({ Todos }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const todosRes = await fetch(`${process.env.BASE_URL}`);
+export async function getStaticProps(context) {
+  const todosRes = await fetch(`https://next-todo-kappa.vercel.app/api/todo`);
   const Todos = await todosRes.json();
 
   return {
