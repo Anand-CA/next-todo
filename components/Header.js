@@ -10,7 +10,7 @@ export default function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${process.env.BASE_URL}/createTodo`, {
+      .post(`https://next-todo-kappa.vercel.app/api/todo/createTodo`, {
         text: todoText,
         finished: false,
       })

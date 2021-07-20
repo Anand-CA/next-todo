@@ -11,13 +11,15 @@ export default function Todo({ no, id, text }) {
 
   const handleDelete = () => {
     console.log(id);
-    axios.delete(`${process.env.BASE_URL}/deleteTodo?id=${id}`).then((res) => {
-      dispatch(
-        delete_todo({
-          id: res.data.id,
-        })
-      );
-    });
+    axios
+      .delete(`https://next-todo-kappa.vercel.app/api/todo/deleteTodo?id=${id}`)
+      .then((res) => {
+        dispatch(
+          delete_todo({
+            id: res.data.id,
+          })
+        );
+      });
   };
   return (
     <>

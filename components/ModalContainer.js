@@ -19,7 +19,9 @@ function ModalContainer({ id, text, showModal, setShowModal }) {
     console.log("updated");
     if (updateText) {
       axios
-        .patch(`${process.env.BASE_URL}/updateTodo?id=${id}&text=${updateText}`)
+        .patch(
+          `https://next-todo-kappa.vercel.app/api/todo/updateTodo?id=${id}&text=${updateText}`
+        )
         .then((res) => {
           dispatch(
             update_todo({
